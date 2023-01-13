@@ -1,0 +1,47 @@
+.projects > .container {
+  padding-top: 4rem;
+  & .projects__grid {
+    display: grid;
+    justify-content: center;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 400px));
+  }
+
+  & .project__box {
+    background-color: $clr-primary-500;
+    border-radius: 10px;
+    overflow: hidden;
+
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+      rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+    & img {
+      max-height: 400px;
+    }
+
+    & .project__info {
+      padding: 1rem;
+      text-align: center;
+      color: $clr-neutral-100;
+
+      & .title {
+        font-size: 2rem;
+      }
+    }
+
+    .project__links {
+      display: flex;
+      justify-content: space-between;
+
+      & a {
+        color: $clr-primary-200;
+        text-decoration: none;
+      }
+
+      & a:hover {
+        text-decoration: overline;
+      }
+    }
+  }
+}

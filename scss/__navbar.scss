@@ -1,0 +1,122 @@
+.navbar > .container {
+  border-bottom: solid 1px $clr-primary-500;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $clr-neutral-100;
+
+  & .top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  & .logo {
+    text-align: left;
+    padding: 1rem;
+    font-size: 1.3rem;
+    @include rainbox-color;
+
+    @include responsive_tab() {
+      padding: 0;
+
+      font-size: 1.8rem;
+    }
+  }
+
+  & .hamburger--menu {
+    label.hamburger {
+      display: block;
+      background: $clr-neutral-100;
+      width: 40px; /* less width = square hamburger */
+      height: 60px;
+      position: relative;
+      cursor: pointer;
+      margin-right: 1rem;
+
+      @include responsive_tab() {
+        display: none;
+      }
+    }
+
+    input#hamburger {
+      display: none;
+    }
+
+    .line {
+      position: absolute;
+      height: 6px;
+      width: 100%;
+      background: $clr-primary-500;
+      transition: 0.5s;
+    }
+    /* steps of 12 are optional, could also be 10, 13 etc */
+    .line:nth-child(1) {
+      top: 12px;
+    }
+    .line:nth-child(2) {
+      top: 24px;
+    }
+    .line:nth-child(3) {
+      top: 36px;
+    }
+
+    /* translateY must be same as */
+    #hamburger:checked + .hamburger .line:nth-child(1) {
+      transform: translateY(12px) rotate(-45deg);
+    }
+
+    #hamburger:checked + .hamburger .line:nth-child(2) {
+      opacity: 0;
+    }
+
+    #hamburger:checked + .hamburger .line:nth-child(3) {
+      transform: translateY(-12px) rotate(45deg);
+    }
+  }
+
+  @include responsive_mobile() {
+    padding-bottom: 0px;
+  }
+
+  @include responsive_tab() {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.links {
+  display: none;
+  width: 100%;
+  list-style: none;
+  text-align: center;
+
+  & a {
+    text-decoration: none;
+    color: $clr-neutral-300;
+
+    &:hover {
+      color: $clr-primary-200;
+    }
+  }
+
+  @include responsive_tab() {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.8rem;
+  }
+
+  @include responsive_desktop() {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0.8rem;
+  }
+}
+
+.visible {
+  display: block;
+}

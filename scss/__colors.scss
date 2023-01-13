@@ -1,0 +1,24 @@
+$clr-primary-500: #242582;
+$clr-primary-400: #2f2fa2;
+$clr-primary-300: #553d67;
+$clr-primary-200: #f64c72;
+$clr-primary-100: #99738e;
+
+$clr-neutral-300: #000000;
+$clr-neutral-200: #c4cbcaff;
+$clr-neutral-100: #ffffff;
+
+@mixin rainbox-color() {
+  // CSS
+  color: #f6a1ce;
+  background-image: -webkit-linear-gradient(
+    0deg,
+    $clr-primary-200 12%,
+    $clr-primary-300 37%,
+    $clr-primary-500 96%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
